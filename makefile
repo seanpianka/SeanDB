@@ -1,22 +1,8 @@
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
-HEADERS = $(wildcard *.h)
-TARGET = db.x
-CC = '/usr/local/bin/gcc-5'
-CFLAGS = -Wall -Wextra -g
-
-.PHONY: default all clean
-
-default: $(TARGET)
+default: build
 all: default
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-.PRECIOUS: $(TARGET) $(OBJECT)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@
+build:
+	cd src && make
 
 clean:
-	-rm -f $(TARGET)
-	-rm -f *.o *.gch
+	cd src && make clean
