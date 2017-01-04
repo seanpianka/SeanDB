@@ -1,4 +1,4 @@
-# Hard C Database
+# SeanDB, a simple C database
 
 Exercise #17 from "Learn C the Hard Way", written by Zedd Shaw.
 
